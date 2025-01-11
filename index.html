@@ -123,7 +123,7 @@
 <body>
 
 <section class="content">
-    <h1>CHANGE ANYONE'S<br>STYLE INSTANTLY!</h1>
+    <h1>CHANGE YOUR STYLE<br>EASILY</h1>
 </section>
 
 <section class="container">
@@ -152,32 +152,38 @@
 
 <div class="emoji-container" id="emoji-container"></div>
 
+
 <script>
     const emojis = ['❤️', '👍', '🔥', '🔞', '🍑'];
     const emojiContainer = document.getElementById('emoji-container');
 
-    function spawnEmoji() {
-        const emoji = document.createElement('div');
-        emoji.classList.add('emoji');
-        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    function spawnEmojis() {
+        const emojiCount = Math.floor(Math.random() * 3) + 1; // Случайное количество эмодзи (1–3)
+        for (let i = 0; i < emojiCount; i++) {
+            const emoji = document.createElement('div');
+            emoji.classList.add('emoji');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
 
-        // Устанавливаем случайное начальное положение
-        const startX = Math.random() * window.innerWidth;
-        const startY = window.innerHeight;
+            // Устанавливаем случайное начальное положение
+            const startX = Math.random() * window.innerWidth;
+            const startY = window.innerHeight;
 
-        emoji.style.left = `${startX}px`;
-        emoji.style.top = `${startY}px`;
+            emoji.style.left = `${startX}px`;
+            emoji.style.top = `${startY}px`;
 
-        // Добавляем эмодзи в контейнер
-        emojiContainer.appendChild(emoji);
+            // Добавляем эмодзи в контейнер
+            emojiContainer.appendChild(emoji);
 
-        // Удаляем эмодзи после окончания анимации
-        emoji.addEventListener('animationend', () => emoji.remove());
+            // Удаляем эмодзи после окончания анимации
+            emoji.addEventListener('animationend', () => emoji.remove());
+        }
     }
 
     // Постоянно создаем эмодзи каждые 500 мс
-    setInterval(spawnEmoji, 6000);
+    setInterval(spawnEmojis, 40000);
 </script>
+
+
 
 </body>
 </html>
