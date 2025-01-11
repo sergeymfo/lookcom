@@ -1,61 +1,229 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M2JB45HB');</script>
-	
-</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Look Eva AI bot</title>
+    <title>Telegram Bot Promo</title>
     <style>
-        body {
+        html, body {
+            width: 100%;
+            height: 100%;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #fff;
-            color: #000;
             font-family: Arial, sans-serif;
+            overflow-y: auto;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #0d0d0d, #1c1c3b, #232323, #0d0d0d);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .phone-frame {
+            position: relative;
+            width: 100%;
+            display: block;
+            z-index: 2;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: yellow;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+            line-height: 1.2;
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .content ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .content ul li::before {
+            content: '🍑';
+            margin-right: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #FFD700;
+            color: black;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px auto;
+            text-align: center;
+            max-width: 200px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px #FFD700;
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px #FFD700;
+            }
+        }
+
+        /* Лайки */
+        .likes-container {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .like {
+            position: absolute;
+            bottom: 0;
+            animation: float-up 3s ease-out forwards, fade-out 3s ease-out forwards;
+            font-size: 24px;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                transform: translateY(-150px) scale(1.5);
+            }
+        }
+
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
     </style>
-<!-- Meta Pixel Code -->
-				<script>
-				!function(f,b,e,v,n,t,s)
-				{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-				n.queue=[];t=b.createElement(e);t.async=!0;
-				t.src=v;s=b.getElementsByTagName(e)[0];
-				s.parentNode.insertBefore(t,s)}(window, document,'script',
-				'https://connect.facebook.net/en_US/fbevents.js');
-				fbq('init', '577816378491309');
-				fbq('track', 'PageView');
-				</script>
-				<noscript><img height="1" width="1" style="display:none"
-				src="https://www.facebook.com/tr?id=577816378491309&ev=PageView&noscript=1"
-				/></noscript>
-				<!-- End Meta Pixel Code -->
 </head>
 <body>
-<script> 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2JB45HB"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-	</script>
-	
-	<script>
-  fbq('track', 'Lead');
+
+<section class="content">
+    <h1>CHANGE ANYONE'S<br>STYLE INSTANTLY!</h1>
+</section>
+
+<section class="container">
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <img src="3.png" alt="Phone Frame" class="phone-frame">
+</section>
+
+<section class="content">
+    <p>
+        Transform your photos like a pro with our Telegram bot. Features include:
+    </p>
+    <ul>
+        <li>🍑 Effortlessly remove backgrounds from any image.</li>
+        <li>🍑 Add stunning adult filters and effects.</li>
+        <li>🍑 Share results instantly with your friends.</li>
+    </ul>
+    <p><strong>Join the adult fun—over 2 million users already enjoy it! 🎉</strong></p>
+    <a href="https://t.me/LookEVA_bot?start=678259eddd38257587012876" class="button">
+        Try the Bot Now
+        <div class="likes-container" id="likes-container"></div>
+    </a>
+</section>
+
+<script>
+    const likesContainer = document.getElementById('likes-container');
+
+    function createLikeEmoji() {
+        const emojiArray = ['❤️', '😍', '👍', '🎉', '🔥'];
+        const like = document.createElement('div');
+        like.className = 'like';
+        like.style.left = `${Math.random() * 80 + 10}%`;
+        like.textContent = emojiArray[Math.floor(Math.random() * emojiArray.length)];
+        likesContainer.appendChild(like);
+
+        setTimeout(() => {
+            like.remove();
+        }, 3000);
+    }
+
+    setInterval(createLikeEmoji, 500); // Генерація нових емоджі кожні 500 мс
 </script>
 
-    <h1 id="hello"></h1>
-		<script async src="https://static.sppopups.com/assets/loader.js" data-chats-widget-id="c65ed805-5c10-491c-b7d7-370d52bebcf4"></script>
 </body>
 </html>
