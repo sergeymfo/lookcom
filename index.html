@@ -41,7 +41,7 @@
         .phone-frame {
             position: relative;
             z-index: 2;
-            width: 70%; /* Ширина изображения */
+            width: 70%;
             display: block;
             margin: 0 auto;
         }
@@ -51,7 +51,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: calc(62% - 5px); /* Видео меньше изображения на 5% и дополнительно на 5 пикселей */
+            width: calc(62% - 5px);
             z-index: 1;
         }
 
@@ -110,13 +110,15 @@
             font-weight: bold;
             text-decoration: none;
             border-radius: 5px;
-            margin: 20px auto;
-            text-align: center;
+            position: absolute; /* Кнопка позиционируется относительно контейнера */
+            bottom: 10px; /* Фиксация внизу контейнера */
+            left: 50%; /* Центровка по горизонтали */
+            transform: translateX(-50%);
             max-width: 200px;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
             cursor: pointer;
             animation: pulse 2s infinite;
+            z-index: 1000;
         }
 
         @keyframes pulse {
@@ -180,6 +182,9 @@
         </video>
     </div>
     <img src="3.png" alt="Phone Frame" class="phone-frame">
+    <a href="https://t.me/LookEVA_bot?start=678259eddd38257587012876" class="button">
+        Try the Bot Now
+    </a>
 </section>
 
 <section class="content">
@@ -192,10 +197,6 @@
         <li>🍑 Share results instantly with your friends.</li>
     </ul>
     <p><strong>Join the adult fun—over 2 million users already enjoy it! 🎉</strong></p>
-    <a href="https://t.me/LookEVA_bot?start=678259eddd38257587012876" class="button">
-        Try the Bot Now
-        <div class="likes-container" id="likes-container"></div>
-    </a>
 </section>
 
 <script>
